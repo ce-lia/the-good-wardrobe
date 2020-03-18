@@ -18,7 +18,6 @@ gem 'webpacker'
 gem 'devise'
 
 gem 'money-rails', '~>1.12'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 
 
