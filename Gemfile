@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'devise'
 
 gem 'money-rails', '~>1.12'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 group :development do
