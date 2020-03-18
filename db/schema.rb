@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_102805) do
+ActiveRecord::Schema.define(version: 2020_03_18_150937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_102805) do
   end
 
   create_table "proportions", force: :cascade do |t|
-    t.integer "pourcentage"
+    t.integer "percentage"
     t.bigint "product_id"
     t.bigint "material_id"
     t.datetime "created_at", null: false

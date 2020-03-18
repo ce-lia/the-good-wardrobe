@@ -9,5 +9,11 @@
   <%= f.input :status, label: 'to sell' %>
   <%= f.input :category, label: 'category', placeholder: "???" %>
 
+  <%= simple_form_for [@product, proportion] do |f| %>
+  <%= f.association :material, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.input :percentage %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
   <%= f.submit "add this cloth" %>
 <% end %>
