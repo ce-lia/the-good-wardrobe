@@ -1,5 +1,10 @@
 <h1><%= @product.title %></h1>
-<p><%= @product.title %>
-<%= @product.second_hand %>
-<%= @product.description %></p>
+
+<p><%= @product.title %></p>
+<p><%= @product.second_hand %></p>
+<p><%= @product.description %></p>
+<%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+
+
+
 
