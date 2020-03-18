@@ -1,13 +1,14 @@
 <%= simple_form_for @product do |f| %>
-  <%= f.input :description, label: 'this is a red dress is totally brand new', error: 'you must describe this clothe' %>
+  <%= f.input :description, label: "Description", placeholder: 'this is a red dress is totally brand new', error: 'you must describe this clothe' %>
   <%= f.input :second_hand %>
-  <%= f.input :purchase_date, label: 'AAAA/MM/DD' %>
-  <%= f.input :discard_date, label: 'AAAA/MM/DD' %>
-  <%= f.input :title, label: 'red dress', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :brand, label: 'Dior, H&M...', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :origin, label: 'China, France, India...', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :status, label: 'to sell' %>
-  <%= f.input :category, label: 'category', placeholder: "???" %>
+  <%= f.input :purchase_date, label: "Date d'achat", placeholder: 'AAAA/MM/DD' %>
+  <%= f.input :discard_date, label: "Date de séparation", placeholder: 'AAAA/MM/DD' %>
+  <%= f.input :title, label: "Titre", placeholder: 'red dress', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :brand, label: "Marque", placeholder: 'Dior, H&M...', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :origin, label: "Origine", placeholderder: 'Made in China, France, India...', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :status, label: "Statut", placeholderder: 'to sell' %>
+  <%= f.input :category, label: 'category', placeholder: "Pantalon, Robe..." %>
+  <%= f.input :photo, as: :file %>
 
   <%= simple_form_for [@product, proportion] do |f| %>
   <%= f.association :material, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
