@@ -10,5 +10,11 @@
   <%= f.input :category, label: 'category', placeholder: "Pantalon, Robe..." %>
   <%= f.input :photo, as: :file %>
 
+  <%= simple_form_for [@product, proportion] do |f| %>
+  <%= f.association :material, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.input :percentage %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
   <%= f.submit "add this cloth" %>
 <% end %>
