@@ -1,8 +1,10 @@
 <h1>Produit : <%= @product.title %></h1>
 
-
-<%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
-
+<%if @product.photo.attached? %>
+  <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+  <%else%>
+  <%= cl_image_tag("summer-clothes-set_74855-446_ehwivf.jpg") %>
+<%end%>
     <h3>Description</h3>
     <p>
     	<%= @product.description%>
@@ -28,12 +30,6 @@
 
     <p>
     	<%= @product.origin%>
-    </p>
-
-    <h3>User</h3>
-
-    <p>
-    	<%= @product.user%>
     </p>
 
 <p>
