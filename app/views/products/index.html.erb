@@ -1,8 +1,22 @@
-<h1>ooook</h1>
-
+<h1>Products</h1>
 <% @products.each do |product| %>
-  <%= product.title %>
-  <%= product.second_hand %>
-  <%= product.description %>
-  <%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+<h3>Title: <%= product.title%> </h3>
+
+
+<h4>Description: <%= product.description%> </h4>
+
+<%= product.description%>
+
+
+
+<p>
+ <%= link_to "See more", product_path(product) %>
+</p>
+
+
+
+<% end %>	
+
+<%= link_to "Add New Product", new_product_path(@product) %>
+
+
