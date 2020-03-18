@@ -48,10 +48,11 @@ puts "Creating our products..."
     description:Faker::Lorem.sentence(word_count: 6),
     brand:Faker::Kpop.solo,
     second_hand:[true,false].sample,
-    category:  category.sample,
+    category: category.sample,
     origin:Faker::Address.country,
-    user: User.all.sample,
+    user: User.all.sample
   )
+  product.save
   end
 
   puts "Done !"
