@@ -1,4 +1,4 @@
-<h1>ooook</h1>
+<!-- <h1>ooook</h1>
 
 <% @products.each do |product| %>
   <%= product.title %>
@@ -6,3 +6,60 @@
   <%= product.description %>
   <%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
+ -->
+
+<h1>Products</h1>
+<!-- <button type="button" class="btn btn-primary">Primary</button> -->
+<!-- <ul>
+ -->  <% @products.each do |product| %>
+<!--     <h2><%= link_to product.title, product_path(product) %></h2>
+ -->
+    <h3>Description</h3>
+    <p>
+    	<%= product.description%>
+    </p>
+
+    <h3>Brand</h3>
+    <p>
+    	<%= product.brand%>
+    </p>
+
+    <h3>Second hand</h3>
+    <p>
+    	<%= product.second_hand%>
+    </p>
+
+    <h3>Category</h3>
+    <p>
+    	<%= product.category%>
+    </p>
+
+    <h3>Origin</h3>
+
+
+    <p>
+    	<%= product.origin%>
+    </p>
+
+    <h3>User</h3>
+
+    <p>
+    	<%= product.user%>
+    </p>
+
+
+  <% end %>
+<!-- </ul>
+ -->
+<%= link_to "Add New Product", new_product_path(@product) %>
+
+
+
+<!--
+    title:Faker::Commerce.product_name,
+    description:Faker::Lorem.sentence(word_count: 6),
+    brand:Faker::Kpop.solo,
+    second_hand:[true,false].sample,
+    category:  category.sample,
+    origin:Faker::Address.country,
+    user: User.all.sample -->
