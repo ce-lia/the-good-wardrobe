@@ -14,41 +14,23 @@
  -->  <% @products.each do |product| %>
 <!--     <h2><%= link_to product.title, product_path(product) %></h2>
  -->
-    <h3>Description</h3>
-    <p>
-    	<%= product.description%>
-    </p>
-
-    <h3>Brand</h3>
-    <p>
-    	<%= product.brand%>
-    </p>
-
-    <h3>Second hand</h3>
-    <p>
-    	<%= product.second_hand%>
-    </p>
-
-    <h3>Category</h3>
-    <p>
-    	<%= product.category%>
-    </p>
-
-    <h3>Origin</h3>
+    <h3>Title: <%= product.title%> </h3>
 
 
-    <p>
-    	<%= product.origin%>
-    </p>
-
-    <h3>User</h3>
-
-    <p>
-    	<%= product.user%>
-    </p>
+	<h4>Description: <%= product.title%> </h4>
+  
+		<%= product.description%>
 
 
-  <% end %>
+   
+<p>
+	 	<%= link_to "See more", product_path(product) %>
+</p>
+
+
+
+  <% end %>	
+        
 <!-- </ul>
  -->
 <%= link_to "Add New Product", new_product_path(@product) %>
