@@ -1,1 +1,8 @@
-ok
+<h1>ooook</h1>
+
+<% @products.each do |product| %>
+  <%= product.title %>
+  <%= product.second_hand %>
+  <%= product.description %>
+  <%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
