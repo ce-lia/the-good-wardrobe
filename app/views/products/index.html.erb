@@ -1,22 +1,24 @@
-<h1>Products</h1>
+<h1 class="title-index">My Wardrobe</h1>
+<p class="add-product"><%= link_to "Add New Product", new_product_path(@product) %></p>
+
 <% @products.each do |product| %>
-<h3>Title: <%= product.title%> </h3>
-
-
-<h4>Description: <%= product.description%> </h4>
-
-<%= product.description%>
-
-
-
-<p>
- <%= link_to "See more", product_path(product) %>
-</p>
-
-
-
-<% end %>	
-
-<%= link_to "Add New Product", new_product_path(@product) %>
-
+  <div class="card-trip">
+    <%if product.photo.attached? %>
+      <div class="img-card">
+        <%= cl_image_tag product.photo.key %>
+      </div>
+      <%else%>
+      <div class="img-card">
+        <%= cl_image_tag("summer-clothes-set_74855-446_ehwivf.jpg") %>
+      </div>
+    <%end%>
+    <div class="card-trip-infos">
+      <div>
+        <h3><%=product.title%></h3>
+        <p><%=product.description%></p>
+      </div>
+      <p class="card-trip-pricing"><%= link_to "See more", product_path(product) %></p>
+    </div>
+  </div>
+<% end %>
 
