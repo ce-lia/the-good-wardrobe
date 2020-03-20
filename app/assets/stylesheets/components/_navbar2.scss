@@ -48,6 +48,7 @@ body{
   padding: 5px 0;
   -webkit-transition : all 0.3s ease-out;
   transition : all 0.3s ease-out;
+  padding: 5px 20px 5px 20px;
 }
 .start-header.scroll-on .navbar-brand img{
   height: 28px;
@@ -62,6 +63,8 @@ body{
   z-index: 1000;
   -webkit-transition : all 0.3s ease-out;
   transition : all 0.3s ease-out;
+  padding: 5px 20px 5px 20px;
+
 }
 .navbar{
   padding: 0;
@@ -115,7 +118,7 @@ body{
   border-color: transparent;
 }
 .nav-link{
-  color: #212121 !important;
+  color: $lavender !important;
   font-weight: 500;
     transition: all 200ms linear;
 }

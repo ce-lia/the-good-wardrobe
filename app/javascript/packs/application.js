@@ -10,8 +10,7 @@ if (header) {
 
 
   window.addEventListener("scroll", (event) => {
-    if (scroll) {
-      console.log(scroll);
+    if (window.scrollY >=10) {
       header.classList.remove("start-style");
       header.classList.add("scroll-on");
       console.log("Test if")
