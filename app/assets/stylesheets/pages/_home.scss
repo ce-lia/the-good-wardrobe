@@ -3,7 +3,7 @@ body {
   background-color: #fff;
 }
 
-.bg{
+.container-home{
   position: relative;
   background-image: asset-url('Ethical_wardrobe1.jpg');
   height: 100vh;
@@ -16,9 +16,21 @@ body {
 .container{
   width: 600px;
   border-radius: 5px;
-  background-color: white;
   padding: 20px;
-  box-shadow: 1px 1px 10px 0px rgba(0,0,0,.4);
+  position: relative;
+  top: 50px;
+}
+
+.container-home a, .container-home label {
+  color: #fff
+}
+
+.container-home label:nth-child(1) {
+  display: none;
+}
+
+.container-home .form-check {
+  float: right;
 }
 
 .page{
