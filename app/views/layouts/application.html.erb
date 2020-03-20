@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>The Good Wardrobe</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -17,7 +17,40 @@
 
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
+
+<style>
+  .footer {
+  background-color: #D6B3FE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  color: white;
+  position:inline;
+  width:100%;
+  height:100px;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+</style>

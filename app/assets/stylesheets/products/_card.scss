@@ -1,0 +1,92 @@
+.card-trip img {
+  width: 400px;
+  height: 500px
+}
+
+.title-index {text-align: center; margin-top: 15px;}
+.add-product {
+  text-align:right;
+  width: 80%;
+  margin: auto;
+}
+
+.img-card {position: relative}
+
+.img-card .tag {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 25px;
+  color: #fff;
+  background-color: $lavender;
+  padding: 5px 25px 5px 25px;
+  &:hover{
+    color: #fff;
+  }
+}
+
+.title-product {
+  display: inline-block;
+  font-size: 20px;
+}
+.second-hand {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  border-radius: 25px;
+  color: #fff;
+  background-color: $viridian;
+  padding: 0px 25px 0px 25px;
+  &:hover{
+    color: #fff;
+  }
+}
+
+.card-all {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 85%;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 400px;
+  margin: 20px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
