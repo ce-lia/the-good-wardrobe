@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
 
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  def index #=> view => index.html.erb
-    @products = Product.all
+  def index
+    @products = current_user.products.all
   end
 
   def show; end

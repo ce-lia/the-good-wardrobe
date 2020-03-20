@@ -21,6 +21,7 @@ puts "Creating our users..."
   louis = User.create!(email: 'louis@louis.com',password: 'password', first_name:"Louis",last_name:"Degoy",address:"Nice")
   sleep(1)
 
+  users = [matti, celia, david, patrick, louis]
 
   category = ["pants","shirt","dress","shorts","t-shirt","sweat-shirt","caot","jacket","skirt"]
 
@@ -43,6 +44,7 @@ rayon = Material.create!(name: 'rayon')
 puts "Creating our products..."
 
 10.times do |i|
+  user = users.sample
   product = Product.new(
     title:Faker::Commerce.product_name,
     description:Faker::Lorem.sentence(word_count: 6),
@@ -50,7 +52,7 @@ puts "Creating our products..."
     second_hand:[true,false].sample,
     category: category.sample,
     origin:Faker::Address.country,
-    user: User.all.sample
+    user: user
   )
   product.save
   end
