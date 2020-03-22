@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  def home
-
+  def statistics
+    @products = Product.all
   end
+
 end
