@@ -4,5 +4,9 @@
 <%= pie_chart @products.group(:second_hand).count,donut: true %>
 <%= pie_chart @products.group(:brand).count %>
 
+
 <%= line_chart @products.group_by_day(:purchase_date).count, messages: {empty: "No data"}%>
 
+
+
+<%= bar_chart @materials%>
