@@ -1,10 +1,9 @@
 class PagesController < ApplicationController
   def statistics
     @products = Product.all
+    @materials = Material.all
+
     @cloth = @products.find(15)
-    @materials = []
-    @cloth.materials.each do |material|
-      @materials << material.name
-    end
+    @proportion = @cloth.proportions
   end
 end

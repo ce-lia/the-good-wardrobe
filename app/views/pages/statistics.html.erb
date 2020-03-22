@@ -7,6 +7,21 @@
 
 <%= line_chart @products.group_by_day(:purchase_date).count, messages: {empty: "No data"}%>
 
-
-
 <%= bar_chart @materials%>
+
+<%= pie_chart @materials.group(:name).count %>
+
+
+<!-- test : -->
+pie_chart @proportion.group(:percentage).sum('material.name')
+
+
+<!-- Rappel pour joined tables : -->
+<% @cloth.proportions.each do |proportion| %>
+            <tr>
+              <td><%= proportion.material.name %></td>
+              <td><%= proportion.percentage %></td>
+            </tr>
+          <% end %>
+
+
