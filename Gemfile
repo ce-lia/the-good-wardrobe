@@ -20,6 +20,8 @@ gem 'faker'
 
 gem 'money-rails', '~>1.12'
 gem 'cloudinary', '~> 1.12.0'
+gem 'chartkick'
+gem 'groupdate'
 
 
 group :development do

@@ -12,3 +12,24 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: $lavender;
+  &:hover{
+    color: #2D979E;
+  }
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active  {
+ color: $lavender;
+}
+
+.navbar-light .navbar-brand {
+  color: $lavender;
+  font-family: "Lora", "Helvetica", "sans-serif";
+  font-size: 30px;
+   &:hover{
+    color: #2D979E;
+   }
+
+}
