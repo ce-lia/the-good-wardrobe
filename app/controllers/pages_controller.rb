@@ -5,11 +5,11 @@ class PagesController < ApplicationController
 
     @composition_hash = Hash.new
     @products.each do |product|
-      # if product.second_hand != true <-- decomment if we don't want second hand clothes to influence this data
+      if product.second_hand != true
         product.proportions.each do |proportion|
         @composition_hash[proportion.material.name] =+  proportion.percentage
         end
-      # end
+      end
     end
 
     thrifted = @products.group(:second_hand).count

@@ -22,17 +22,15 @@ class User < ApplicationRecord
   end
 
   def organic_recycled_materials
-    composition_hash = Hash.new
+    @composition_hash = Hash.new
     self.products.each do |product|
       if product.second_hand != true
           product.proportions.each do |proportion|
-          composition_hash[proportion.material.name] =+ proportion.percentage
+          @composition_hash[proportion.material.name] =+ proportion.percentage
           end
       end
     end
-    if composition_hash != nil
-    composition_hash[:organic_hemp] + composition_hash[:organic_cotton] + composition_hash[:lyocell] / composition_hash[:polyester] + composition_hash[:nylon] + composition_hash[:coton]
-  end
+    (@composition_hash["recycled cotton"].to_f + @composition_hash["recycled nylon"].to_f + @composition_hash["lyocell"].to_f) / (@composition_hash["polyester"].to_f + @composition_hash["nylon"].to_f + @composition_hash["cotton"].to_f)
   end
 
 end

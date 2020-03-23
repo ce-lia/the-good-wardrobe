@@ -13,13 +13,13 @@
       <%= pie_chart (@thrift_hash),donut: true, height: "200px" %>
     </div>
     <div class="col-md-6 col-sm-12">
-      <h4>Composition</h3>
+      <h4>Composition of your new clothes</h3>
       <%= pie_chart @composition_hash, height: "200px" %>
     </div>
     <div class="w-100"></div>
   </div>
-      <h4>Average life expectancy</h3>
+      <h4>Average time spent in your wardrobe</h3>
       <%= bar_chart @products.group(:category).sum(@lifetime),xtitle: "Months",label: "Months" %>
-       <h4>Where are my clothes from ?</h3>
+       <h4>Where were your clothes made ?</h3>
       <%= geo_chart @products.group(:origin).count %>
 </div>

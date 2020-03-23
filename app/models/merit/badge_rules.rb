@@ -21,15 +21,15 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      grant_on ['products#create','products#update'],  badge: 'thrifter101', to: :user do |product|
+      grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter101', to: :user do |product|
         product.user.second_hand_percentage < 0.4
       end
 
-      grant_on ['products#create','products#update'],  badge: 'thrifter102', to: :user do |product|
+      grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter102', to: :user do |product|
         product.user.second_hand_percentage >= 0.5
       end
 
-      grant_on ['products#create','products#update'],  badge: 'thrifter103', to: :user do |product|
+      grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter103', to: :user do |product|
         product.user.second_hand_percentage >= 0.8
       end
 
