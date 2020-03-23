@@ -6,8 +6,8 @@ class ProportionsController < ApplicationController
   end
 
   def create
-    @product = Product.find(params[:product_id])
     @proportion = Proportion.new(proportion_params)
+    @product = Product.find(params[:product_id])
     @proportion.product = @product
     if @proportion.save
       redirect_to product_path(@product)

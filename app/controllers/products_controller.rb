@@ -6,7 +6,9 @@ class ProductsController < ApplicationController
     @products = current_user.products.all
   end
 
-  def show; end
+  def show
+    @proportion = Proportion.new
+  end
 
   def new
     @product = Product.new
