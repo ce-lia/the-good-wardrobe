@@ -1,13 +1,11 @@
 <%= simple_form_for @product do |f| %>
-  <%= f.input :description, label: "Description", placeholder: 'this is a red dress is totally brand new', error: 'you must describe this clothe' %>
+  <%= f.input :title, label: "Titre", placeholder: 'red dress', error: 'Title is mandatory, please specify one' %>
+  <%= f.input :description, label: "Description", placeholder: 'this is a red dress is totally brand new', error: 'Please enter a short description' %>
   <%= f.input :second_hand %>
-  <%= f.input :purchase_date, label: "Date d'achat", placeholder: 'AAAA/MM/DD' %>
-  <%= f.input :discard_date, label: "Date de séparation", placeholder: 'AAAA/MM/DD' %>
-  <%= f.input :title, label: "Titre", placeholder: 'red dress', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :brand, label: "Marque", placeholder: 'Dior, H&M...', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :origin, label: "Origine", placeholderder: 'Made in China, France, India...', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :status, label: "Statut", placeholderder: 'to sell' %>
-  <%= f.input :category, label: 'category', :collection => ["dress", "jeans", "shirt"] %>
+  <%= f.input :purchase_date, label: "Purchase date", placeholder: 'AAAA/MM/DD' %>
+  <%= f.input :brand, label: "Brand", placeholder: 'Dior, H&M...'%>
+  <%= f.input :origin, label: "Made in", placeholderder: 'Made in China, France, India...'%>
+  <%= f.input :category, label: 'category', :collection => ["dress", "jeans", "shirt", "pants", "skirt", "t-shirt", "sweatshirt", "coat", "jacket"] %>
   <%= f.input :photo, as: :file %>
   <% if @product.category.blank? %>
     <%= f.submit "Submit" %>
