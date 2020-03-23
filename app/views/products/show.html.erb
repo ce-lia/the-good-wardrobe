@@ -37,26 +37,17 @@
     <p><%= link_to 'My Wardrobe', root_path, class: "back" %></p>
   </div>
 
-  <div class="proportions">
+  <div>
     <h3>Composition</h3>
-    <ul>
+    <ul id="proportions">
       <% @product.proportions.each do |proportion| %>
-        <li><%=  proportion.material.name %> - <%=  proportion.percentage %> %</li>
-        <%= link_to "delete",
-                proportion_path(proportion),
-                method: :delete,
-                data: { confirm: "Are you sure?" },
-                class: "delete-button" %>
+        <%= render "proportions/show", proportion: proportion  %>
       <% end %>
     </ul>
   </div>
 
   <div class="add-proportion">
     <h3>Add materials</h3>
-    <%= simple_form_for [@product, @proportion] do |f| %>
-      <%= f.association :material, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
-      <%= f.input :percentage %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+    <%= render "proportions/form", proportion: @proportion, product: @product  %>
   </div>
 </div>
