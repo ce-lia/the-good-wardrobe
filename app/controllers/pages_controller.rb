@@ -3,11 +3,11 @@ class PagesController < ApplicationController
     @products = current_user.products.all
     @lifetime = current_user.products_lifetime
 
-    @composition_array = []
+    @composition_hash = Hash.new
     @products.each do |product|
       # if product.second_hand != true <-- decomment if we don't want second hand clothes to influence this data
         product.proportions.each do |proportion|
-        @composition_array << [proportion.material.name, proportion.percentage]
+        @composition_hash[proportion.material.name] =+  proportion.percentage
         end
       # end
     end

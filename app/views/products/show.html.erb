@@ -30,7 +30,7 @@
 
     <h3>Origin</h3>
     <p><%= @product.origin%></p>
-    <span><%= link_to "Delete", product_path,
+    <span><%= link_to "Delete", products_path,
             method: :delete,
             data: { confirm: "Are you sure?" }, class: "delete-show" %>
       </span>

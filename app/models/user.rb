@@ -22,12 +22,17 @@ class User < ApplicationRecord
   end
 
   def organic_recycled_materials
+    composition_hash = Hash.new
     self.products.each do |product|
-      # if product.second_hand != true <-- decomment if we don't want second hand clothes to influence this data
-        product.proportions.each do |proportion|
-        @composition_array << [proportion.material.name, proportion.percentage]
-        end
+      if product.second_hand != true
+          product.proportions.each do |proportion|
+          composition_hash[proportion.material.name] =+ proportion.percentage
+          end
       end
+    end
+    if composition_hash != nil
+    composition_hash[:organic_hemp] + composition_hash[:organic_cotton] + composition_hash[:lyocell] / composition_hash[:polyester] + composition_hash[:nylon] + composition_hash[:coton]
+  end
   end
 
 end
