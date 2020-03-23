@@ -1,11 +1,16 @@
 .btn {
   color: #fff;
-  background-color: $lavender;
+  background-color: #2D979E;
+  border: #2D979E;
+  border-radius: 5px;
   &:hover{
     color: #fff;
+    background-color: #322945;
+    border: #322945;
   }
 }
 
 a:hover {
   text-decoration: none;
+
 }
