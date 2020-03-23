@@ -5,9 +5,11 @@ class PagesController < ApplicationController
 
     @composition_array = []
     @products.each do |product|
-      product.proportions.each do |proportion|
-      @composition_array << [proportion.material.name, proportion.percentage]
-      end
+      # if product.second_hand != true <-- decomment if we don't want second hand clothes to influence this data
+        product.proportions.each do |proportion|
+        @composition_array << [proportion.material.name, proportion.percentage]
+        end
+      # end
     end
 
     thrifted = @products.group(:second_hand).count
