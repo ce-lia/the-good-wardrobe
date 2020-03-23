@@ -24,6 +24,7 @@ puts "Creating our users..."
   users = [matti, celia, david, patrick, louis]
 
   category = ["pants","shirt","dress","shorts","t-shirt","sweat-shirt","coat","jacket","skirt"]
+  countries = ["China", "Bangladesh", "Italy", "Turkey", "India", "Tunisia", "Vietnam", "Portugal"]
 
 puts "Creating our materials..."
 
@@ -51,7 +52,7 @@ puts "Creating our products..."
     brand:Faker::Kpop.solo,
     second_hand:[true,false].sample,
     category: category.sample,
-    origin:Faker::Address.country,
+    origin:countries.sample,
     user: user,
     purchase_date:Faker::Date.between(from: 3.years.ago, to: 2.years.ago),
     discard_date:Faker::Date.between(from: 2.years.ago, to: Date.today),
