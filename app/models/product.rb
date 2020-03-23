@@ -9,5 +9,3 @@ class Product < ApplicationRecord
   validates :status, presence: true
   validates :category, presence: true
 end
-
-

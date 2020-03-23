@@ -4,4 +4,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def products_lifetime
+    lifetime = 0
+    products.each do |product|
+      lifetime += product.discard_date - product.purchase_date
+    end
+    average_lifetime = ((lifetime / products.count) / 365 )* 12
+  end
 end
