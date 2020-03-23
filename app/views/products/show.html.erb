@@ -30,10 +30,24 @@
 
     <h3>Origin</h3>
     <p><%= @product.origin%></p>
-    <span><%= link_to "Delete", product_path,
+    <span><%= link_to "Delete", product_path(@product),
             method: :delete,
             data: { confirm: "Are you sure?" }, class: "delete-show" %>
-      </span>
+    </span>
     <p><%= link_to 'My Wardrobe', root_path, class: "back" %></p>
+  </div>
+
+  <div>
+    <h3>Composition</h3>
+    <ul id="proportions">
+      <% @product.proportions.each do |proportion| %>
+        <%= render "proportions/show", proportion: proportion  %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="add-proportion">
+    <h3>Add materials</h3>
+    <%= render "proportions/form", proportion: @proportion, product: @product  %>
   </div>
 </div>
