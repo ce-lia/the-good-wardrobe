@@ -23,7 +23,7 @@ puts "Creating our users..."
 
   users = [matti, celia, david, patrick, louis]
 
-  category = ["pants","shirt","dress","shorts","t-shirt","sweat-shirt","caot","jacket","skirt"]
+  category = ["pants","shirt","dress","shorts","t-shirt","sweat-shirt","coat","jacket","skirt"]
 
 puts "Creating our materials..."
 
@@ -43,7 +43,7 @@ rayon = Material.create!(name: 'rayon')
 
 puts "Creating our products..."
 
-10.times do |i|
+50.times do |i|
   user = users.sample
   product = Product.new(
     title:Faker::Commerce.product_name,
@@ -52,7 +52,9 @@ puts "Creating our products..."
     second_hand:[true,false].sample,
     category: category.sample,
     origin:Faker::Address.country,
-    user: user
+    user: user,
+    purchase_date:Faker::Date.between(from: 3.years.ago, to: 2.years.ago),
+    discard_date:Faker::Date.between(from: 2.years.ago, to: Date.today),
   )
   product.save
   end

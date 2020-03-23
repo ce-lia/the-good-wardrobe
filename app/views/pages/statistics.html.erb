@@ -1,0 +1,17 @@
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<%= javascript_include_tag "chartkick" %>
+
+<%= pie_chart @products.group(:second_hand).count,donut: true %>
+<%= line_chart @products.group_by_day(:purchase_date).count, messages: {empty: "No data"}%>
+
+<% @products.each do |product|  %>
+<%@array = []%>
+<% product.proportions.each do |proportion| %>
+    <% @array << [proportion.material.name, proportion.percentage] %>
+    <% end %>
+<% end %>
+<%= pie_chart @array %>
+
+
+<%= geo_chart @products.group(:origin).count %>
+

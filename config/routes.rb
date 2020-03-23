@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :products do
     resources :proportions, only: [:new, :create, :delete]
   end
+  get 'statistics', to: 'pages#statistics'
 end
