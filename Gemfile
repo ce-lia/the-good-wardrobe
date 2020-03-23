@@ -22,6 +22,7 @@ gem 'money-rails', '~>1.12'
 gem 'cloudinary', '~> 1.12.0'
 gem 'chartkick'
 gem 'groupdate'
+gem 'merit'
 
 
 group :development do

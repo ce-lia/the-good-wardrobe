@@ -1,6 +1,10 @@
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
 <%= javascript_include_tag "chartkick" %>
 
+<% current_user.badges.each do |badge| %>
+<%= badge.description %>
+<% end %>
+
 <div class="stat-container">
   <h1>Statistics</h1>
   <div class="row">
