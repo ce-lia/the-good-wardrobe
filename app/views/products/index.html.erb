@@ -8,6 +8,7 @@
       <%if product.photo.attached? %>
         <div class="img-card">
           <span class="tag">status</span>
+
           <%= link_to product_path(product) do %>
             <%=cl_image_tag product.photo.key%>
           <% end %>
