@@ -26,7 +26,7 @@
       <p><%= @product.category%></p>
     <h3>Made in</h3>
       <p><%= @product.origin%></p>
-    <span><%= link_to "Delete", product_path(@product),
+    <span><%= link_to "Delete" , product_path(@product),
       method: :delete,
       data: { confirm: "Are you sure?" }, class: "delete-show" %>
     </span>
