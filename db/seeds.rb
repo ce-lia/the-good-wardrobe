@@ -44,7 +44,7 @@ rayon = Material.create!(name: 'rayon')
 
 puts "Creating our products..."
 
-50.times do |i|
+1.times do |i|
   user = users.sample
   product = Product.new(
     title:Faker::Commerce.product_name,
