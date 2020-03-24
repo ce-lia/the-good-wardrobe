@@ -4,7 +4,8 @@
 <div class="stat-container">
   <ul>
   <% current_user.badges.each do |badge| %>
-    <li><%= image_tag(badge.custom_fields[:image], class:"badge" )%> <br><%= badge.description%></li>
+    <li><%= image_tag(badge.custom_fields[:image], class:"badge" )%></li>
+    <li><%= badge.description%></li>
 <% end %>
  </ul>
   <h1>Statistics</h1>
