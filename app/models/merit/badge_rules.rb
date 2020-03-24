@@ -34,15 +34,15 @@ module Merit
       end
 
        grant_on ['proportions#create','proportions#destroy'],  badge: 'eco101', to: :user do |proportion|
-        proportion.product.user.organic_recycled_materials < 0.3
+        proportion.product.user.organic_recycled_materials < 0.4
       end
 
       grant_on ['proportions#create','proportions#destroy'],  badge: 'eco102', to: :user do |proportion|
-        proportion.product.user.organic_recycled_materials >= 0.3
+        proportion.product.user.organic_recycled_materials >= 0.4
       end
 
       grant_on ['proportions#create','proportions#destroy'],  badge: 'eco103', to: :user do |proportion|
-        proportion.product.user.organic_recycled_materials >= 0.5
+        proportion.product.user.organic_recycled_materials >= 1
       end
     end
   end
