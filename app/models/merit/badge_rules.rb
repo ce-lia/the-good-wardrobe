@@ -33,16 +33,16 @@ module Merit
         product.user.second_hand_percentage >= 0.8
       end
 
-       grant_on ['proportions#create','proportions#destroy'],  badge: 'eco101', temporary: true, to: :user do |proportion|
-        proportion.product.user.organic_recycled_materials < 0.4
+       grant_on ['proportions#create','proportions#destroy'],  badge: 'eco101', temporary: true, to: :owner do |proportion|
+        proportion.product.user.organic_recycled_materials < 0.3
       end
 
-      grant_on ['proportions#create','proportions#destroy'],  badge: 'eco102', temporary: true, to: :user do |proportion|
-        proportion.product.user.organic_recycled_materials >= 0.4
+      grant_on ['proportions#create','proportions#destroy'],  badge: 'eco102', temporary: true, to: :owner do |proportion|
+        proportion.product.user.organic_recycled_materials >= 0.3
       end
 
-      grant_on ['proportions#create','proportions#destroy'],  badge: 'eco103', temporary: true, to: :user do |proportion|
-        proportion.product.user.organic_recycled_materials >= 1
+      grant_on ['proportions#create','proportions#destroy'],  badge: 'eco103', temporary: true, to: :owner do |proportion|
+        proportion.product.user.organic_recycled_materials >= 0.5
       end
     end
   end

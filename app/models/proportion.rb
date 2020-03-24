@@ -14,4 +14,9 @@ class Proportion < ApplicationRecord
       errors.add(:percentage, "can't be greater than 100%")
     end
   end
+
+  def owner
+    self.product.user
+  end
+
 end

@@ -9,12 +9,16 @@ class User < ApplicationRecord
 
   def products_lifetime
     lifetime = 0
+    average_lifetime = 0
+    if products.count > 0
       products.each do |product|
         if product.discard_date != nil
         lifetime += product.discard_date - product.purchase_date
         end
       end
       average_lifetime = ((lifetime / products.count) / 365 )* 12
+    end
+    average_lifetime
   end
 
   def second_hand_percentage
@@ -30,7 +34,16 @@ class User < ApplicationRecord
           end
       end
     end
-    (@composition_hash["recycled cotton"].to_f + @composition_hash["recycled polyester"].to_f + @composition_hash["lyocell"].to_f) / (@composition_hash["polyester"].to_f + @composition_hash["nylon"].to_f + @composition_hash["cotton"].to_f)
+    total_composition = @composition_hash.values.reduce(:+)
+    good_materials = ["recycled cotton", "organic cotton", "hemp","recycled hemp", "organic hemp","recycled polyester", "recycled nylon", "lyocell"]
+    good_composition = @composition_hash.reduce(0) do |memo, composition|
+      if composition[0].to_s.includes(good_materials)
+        memo + composition[1]
+      else
+        memo
+      end
+    end
+    good_composition.to_f / total_composition.to_f
   end
 
 end

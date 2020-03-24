@@ -3,7 +3,7 @@
 
 <% current_user.badges.each do |badge| %>
   <ul>
-    <li><%= badge.description%><%= image_tag(badge.custom_fields[:image]) %></li>
+    <li><%= badge.description%><%= image_tag(badge.custom_fields[:image])%> </li>
   </ul>
 <% end %>
 

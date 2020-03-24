@@ -5,14 +5,14 @@ Merit.setup do |config|
   id: 1,
   name: "thrifter101",
   description: "Less than 50% of thrifted clothes",
-  custom_fields: { image: 'images/thrifter101.png' }
+  custom_fields: { image: 'thrifter101.png' }
 )
 
    Merit::Badge.create!(
   id: 2,
   name: "thrifter102",
   description: "Over 50% of thrifted clothes",
-  custom_fields: { image: 'images/thrifter102.png' }
+  custom_fields: { image: 'thrifter102.png' }
 )
 
   Merit::Badge.create!(
@@ -25,19 +25,22 @@ Merit.setup do |config|
   Merit::Badge.create!(
   id: 4,
   name: "eco101",
-  description: "Less than 30% of organic or recycled materials in new clothes"
+  description: "Less than 30% of organic or recycled materials in new clothes",
+  custom_fields: { image: 'thrifter101.png' }
 )
 
   Merit::Badge.create!(
   id: 5,
   name: "eco102",
-  description: "Over 30% of organic or recycled materials in new clothes"
+  description: "Over 30% of organic or recycled materials in new clothes",
+  custom_fields: { image: 'thrifter102.png' }
 )
 
   Merit::Badge.create!(
   id: 6,
   name: "eco103",
-  description: "Over 50% of organic or recycled materials in new clothes"
+  description: "Over 50% of organic or recycled materials in new clothes",
+  custom_fields: { image: 'thrifter103.png' }
 )
   # Check rules on each request or in background
   # config.checks_on_each_request = true
