@@ -5,42 +5,43 @@ Merit.setup do |config|
   id: 1,
   name: "thrifter101",
   description: "Less than 50% of thrifted clothes",
-  custom_fields: { image: 'thrifter101.png' }
+  custom_fields: { image: 'badge101.png', advice: 'Try buying more second hand clothes' }
 )
 
    Merit::Badge.create!(
   id: 2,
   name: "thrifter102",
   description: "Over 50% of thrifted clothes",
-  custom_fields: { image: 'thrifter102.png' }
+  custom_fields: { image: 'badge102.png', advice: 'Good job ! Keep up the good work'}
 )
 
   Merit::Badge.create!(
   id: 3,
   name: "thrifter103",
   description: "Over 80% of thrifted clothes",
-  custom_fields: { image: 'thrifter103.png' }
+  custom_fields: { image: 'badge103.png', advice: "You're amazing!"}
 )
 
   Merit::Badge.create!(
   id: 4,
   name: "eco101",
-  description: "Less than 30% of organic or recycled materials in new clothes",
-  custom_fields: { image: 'thrifter101.png' }
+  description: "Less than 30% of organic or recycled materials",
+  custom_fields: { image: 'badge101.png', advice: 'For your new purchases, prefer organic or recycled materials' }
 )
+
 
   Merit::Badge.create!(
   id: 5,
   name: "eco102",
-  description: "Over 30% of organic or recycled materials in new clothes",
-  custom_fields: { image: 'thrifter102.png' }
+  description: "Over 30% of organic or recycled materials",
+  custom_fields: { image: 'badge102.png', advice: 'Good job ! Keep up the good work'}
 )
 
   Merit::Badge.create!(
   id: 6,
   name: "eco103",
-  description: "Over 50% of organic or recycled materials in new clothes",
-  custom_fields: { image: 'thrifter103.png' }
+  description: "Over 50% of organic or recycled materials",
+  custom_fields: { image: 'badge103.png', advice: "You're amazing!"}
 )
   # Check rules on each request or in background
   # config.checks_on_each_request = true
