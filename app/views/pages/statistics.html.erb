@@ -2,11 +2,11 @@
 <%= javascript_include_tag "chartkick" %>
 
 <div class="stat-container">
-  <% current_user.badges.each do |badge| %>
   <ul>
+  <% current_user.badges.each do |badge| %>
     <li><%= image_tag(badge.custom_fields[:image], class:"badge" )%> <br><%= badge.description%></li>
-  </ul>
 <% end %>
+ </ul>
   <h1>Statistics</h1>
   <div class="row">
     <div class="col-md-6 col-sm-12">
