@@ -28,9 +28,15 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to product_path(@product)
-    else
-      render :edit
+      respond_to do |format|
+        format.html { redirect_to products_path }
+        format.js
+      end
+      else
+        respond_to do |format|
+          format.html { render :edit }
+          format.js
+        end
     end
   end
 
@@ -38,7 +44,6 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_path
   end
-
 
   private
 
