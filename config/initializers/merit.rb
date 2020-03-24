@@ -4,19 +4,22 @@ Merit.setup do |config|
   Merit::Badge.create!(
   id: 1,
   name: "thrifter101",
-  description: "Less than 50% of thrifted clothes"
+  description: "Less than 50% of thrifted clothes",
+  custom_fields: { image: 'images/thrifter101.png' }
 )
 
    Merit::Badge.create!(
   id: 2,
   name: "thrifter102",
-  description: "Over 50% of thrifted clothes"
+  description: "Over 50% of thrifted clothes",
+  custom_fields: { image: 'images/thrifter102.png' }
 )
 
   Merit::Badge.create!(
   id: 3,
   name: "thrifter103",
-  description: "Over 80% of thrifted clothes"
+  description: "Over 80% of thrifted clothes",
+  custom_fields: { image: 'thrifter103.png' }
 )
 
   Merit::Badge.create!(

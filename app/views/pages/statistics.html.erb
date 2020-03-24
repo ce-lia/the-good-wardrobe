@@ -2,7 +2,9 @@
 <%= javascript_include_tag "chartkick" %>
 
 <% current_user.badges.each do |badge| %>
-<%= badge.description %>
+  <ul>
+    <li><%= badge.description%><%= image_tag(badge.custom_fields[:image]) %></li>
+  </ul>
 <% end %>
 
 <div class="stat-container">
