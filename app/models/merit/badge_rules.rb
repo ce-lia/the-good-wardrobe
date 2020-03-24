@@ -22,11 +22,11 @@ module Merit
 
     def initialize
       grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter101', temporary: true, to: :user do |product|
-        product.user.second_hand_percentage < 0.4
+        product.user.second_hand_percentage < 0.5
       end
 
       grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter102', temporary: true, to: :user do |product|
-        product.user.second_hand_percentage >= 0.5
+        product.user.second_hand_percentage >= 0.5 && product.user.second_hand_percentage < 0.8
       end
 
       grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter103', temporary: true, to: :user do |product|
@@ -38,7 +38,7 @@ module Merit
       end
 
       grant_on ['proportions#create','proportions#destroy'],  badge: 'eco102', temporary: true, to: :owner do |proportion|
-        proportion.product.user.organic_recycled_materials >= 0.3
+        proportion.product.user.organic_recycled_materials >= 0.3 && proportion.product.user.organic_recycled_materials < 0.5
       end
 
       grant_on ['proportions#create','proportions#destroy'],  badge: 'eco103', temporary: true, to: :owner do |proportion|

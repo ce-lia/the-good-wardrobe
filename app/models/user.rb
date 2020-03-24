@@ -35,7 +35,7 @@ class User < ApplicationRecord
       end
     end
     total_composition = @composition_hash.values.reduce(:+)
-    good_materials = ["recycled cotton", "organic cotton", "hemp","recycled hemp", "organic hemp","recycled polyester", "recycled nylon", "lyocell"]
+    good_materials = ["recycled cotton", "organic cotton","recycled hemp", "organic hemp","recycled polyester", "recycled nylon", "lyocell"]
     good_composition = @composition_hash.reduce(0) do |memo, composition|
       if good_materials.include?(composition[0])
         memo + composition[1]
