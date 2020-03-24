@@ -37,7 +37,7 @@ class User < ApplicationRecord
     total_composition = @composition_hash.values.reduce(:+)
     good_materials = ["recycled cotton", "organic cotton", "hemp","recycled hemp", "organic hemp","recycled polyester", "recycled nylon", "lyocell"]
     good_composition = @composition_hash.reduce(0) do |memo, composition|
-      if composition[0].to_s.includes(good_materials)
+      if good_materials.include?(composition[0])
         memo + composition[1]
       else
         memo
