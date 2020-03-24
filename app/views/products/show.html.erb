@@ -1,6 +1,8 @@
 <div class="container-show">
   <!--   <h1>Produit : <%= @product.title %></h1> -->
-  <h1><%= @product.title %></h1>
+ <h1><%= @product.title %></h1>
+<div class="big-container-show">
+ <div class="container-left">
   <div class="img-show">
     <%if @product.photo.attached? %>
     <!-- <span class="tag">status</span> -->
@@ -11,6 +13,7 @@
     <%= cl_image_tag("summer-clothes-set_74855-446_ehwivf.jpg") %>
     <%end%>
   </div>
+</div>
   <div class="text-show">
     <!--     <h3>Description</h3>
     <p><%= @product.description%></p> -->
@@ -30,9 +33,24 @@
       method: :delete,
       data: { confirm: "Are you sure?" }, class: "delete-show" %>
     </span>
-    <p><%= link_to 'My Wardrobe', root_path, class: "back" %></p>
+      <!-- Click-only FAB html from http://materializecss.com/buttons.html  -->
+<div class="fixed-action-btn horizontal click-to-toggle spin-close">
+    <a class="btn-floating btn-large red">
+      <i class="material-icons">edit</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
   </div>
-  <div>
+    <p><%= link_to 'My Wardrobe', root_path, class: "back" %></p>
+      </div>
+    </div>
+    <div>
+  </div>
+<div>
     <h3>Composition</h3>
     <ul id="proportions">
       <% @product.proportions.each do |proportion| %>
@@ -44,4 +62,5 @@
     <h3>Add materials</h3>
     <%= render "proportions/form", proportion: @proportion, product: @product  %>
   </div>
+</div>
 </div>
