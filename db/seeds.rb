@@ -55,7 +55,7 @@ puts "Creating our products..."
     origin:countries.sample,
     user: user,
     purchase_date:Faker::Date.between(from: 3.years.ago, to: 2.years.ago),
-    discard_date:Faker::Date.between(from: 2.years.ago, to: Date.today),
+    discard_date:Faker::Date.between(from: 2.years.ago, to: Date.today)
   )
   product.save
   end
