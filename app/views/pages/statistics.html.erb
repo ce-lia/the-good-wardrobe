@@ -1,13 +1,12 @@
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
 <%= javascript_include_tag "chartkick" %>
 
-<% current_user.badges.each do |badge| %>
+<div class="stat-container">
+  <% current_user.badges.each do |badge| %>
   <ul>
-    <li><%= badge.description%><%= image_tag(badge.custom_fields[:image])%> </li>
+    <li><%= image_tag(badge.custom_fields[:image], class:"badge" )%> <br><%= badge.description%></li>
   </ul>
 <% end %>
-
-<div class="stat-container">
   <h1>Statistics</h1>
   <div class="row">
     <div class="col-md-6 col-sm-12">
