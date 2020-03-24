@@ -2,13 +2,21 @@
 <%= javascript_include_tag "chartkick" %>
 
 <div class="stat-container">
-  <ul>
-  <% current_user.badges.each do |badge| %>
-    <li><%= image_tag(badge.custom_fields[:image], class:"badge" )%></li>
-    <li><%= badge.description%></li>
-<% end %>
- </ul>
   <h1>Statistics</h1>
+  <% if current_user.badges %>
+    <div class="badges">
+      <ul>
+        <% current_user.badges.each do |badge| %>
+          <li>
+            <%= image_tag(badge.custom_fields[:image])%><br>
+            <%= badge.description%><br>
+            <%= badge.custom_fields[:advice] %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <br style="clear:both" />
+  <%end %>
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <h4>Thrifted clothes ratio</h3>

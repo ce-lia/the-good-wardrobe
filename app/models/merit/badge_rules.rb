@@ -22,7 +22,7 @@ module Merit
 
     def initialize
       grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter101', temporary: true, to: :user do |product|
-        product.user.second_hand_percentage < 0.4
+        product.user.second_hand_percentage < 0.5
       end
 
       grant_on ['products#create','products#update','products#delete'],  badge: 'thrifter102', temporary: true, to: :user do |product|
