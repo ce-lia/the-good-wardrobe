@@ -30,7 +30,7 @@ class User < ApplicationRecord
           end
       end
     end
-    (@composition_hash["recycled cotton"].to_f + @composition_hash["recycled nylon"].to_f + @composition_hash["lyocell"].to_f) / (@composition_hash["polyester"].to_f + @composition_hash["nylon"].to_f + @composition_hash["cotton"].to_f)
+    (@composition_hash["recycled cotton"].to_f + @composition_hash["recycled polyester"].to_f + @composition_hash["lyocell"].to_f) / (@composition_hash["polyester"].to_f + @composition_hash["nylon"].to_f + @composition_hash["cotton"].to_f)
   end
 
 end
