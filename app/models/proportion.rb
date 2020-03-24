@@ -2,7 +2,7 @@ class Proportion < ApplicationRecord
   belongs_to :product
   belongs_to :material
   # validates :product, uniqueness: { scope: :material, message: "already contains this material"}
-  validates :material, uniqueness: { message: "already present in the product"}
+  validates :material, uniqueness: { scope: :product, message: "already present in the product"}
   validate :percentage, :first_step?
   def first_step?
     @proportions_product = Product.find(product_id).proportion_ids
