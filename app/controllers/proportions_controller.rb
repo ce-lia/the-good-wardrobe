@@ -1,3 +1,5 @@
+require "pry-byebug"
+
 class ProportionsController < ApplicationController
 
   def new
