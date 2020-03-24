@@ -1,27 +1,30 @@
 .container-show {
+  display: flex;
+  flex-direction: column;
   width: 85%;
   margin: auto;
   min-height: calc(100vh - 166px);
   margin-bottom: 50px;
   margin-top: 50px;
 }
-
+.big-container-show{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .container-show h1 {
   text-align: center;
   margin-bottom: 45px;
 }
-
 .img-show, .text-show {
   display: inline-block;
   position: relative;
   width: 45%;
   vertical-align: top;
 }
-
 .img-show img {
   vertical-align: initial;
 }
-
 .img-show .tag {
   position: absolute;
   right: 100px;
@@ -33,7 +36,6 @@
     color: #fff;
   }
 }
-
 .delete-show {
   position: absolute;
   right: 10px;
@@ -46,11 +48,9 @@
     color: #fff;
   }
 }
-
 .img-show .tag a {
   color: #fff;
 }
-
 .back {
   border-radius: 25px;
   color: #fff;
@@ -60,11 +60,72 @@
     color: #fff;
   }
 }
-
 .img-show img {
   height: 400px;
   object-fit: cover;
   display: block;
   margin: auto;
 }
-
+// variables
+$fab-close-line-length: 1.64rem;
+$fab-close-line-thickness: 2px;
+$fab-close-animation-time: .3s;
+$fab-close-spins: 1;
+// button
+.fixed-action-btn{
+  &.spin-close{
+    .btn-large {
+      position: relative;
+      i {
+        opacity: 1;
+        transition: transform $fab-close-animation-time,
+      opacity $fab-close-animation-time;
+      }
+      &:before {
+        transition: transform $fab-close-animation-time,
+      opacity $fab-close-animation-time;
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $fab-close-line-length;
+        height: $fab-close-line-thickness;
+        background: white;
+        margin-top: -2px;
+        margin-left: -$fab-close-line-length/2;
+        transform: rotate(0);
+        opacity: 0;
+      }
+      &:after {
+        transition: transform $fab-close-animation-time,
+      opacity $fab-close-animation-time;
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $fab-close-line-length;
+        height: $fab-close-line-thickness;
+        background: white;
+        margin-top: -2px;
+        margin-left: -$fab-close-line-length/2;
+        transform: rotate(0);
+        opacity: 0;
+      }
+    }
+    &.active{
+      .btn-large{
+        i{
+          opacity: 0;
+        }
+        &:before{
+          opacity: 1;
+          transform: rotate(($fab-close-spins*2+1)*45deg);
+        }
+        &:after{
+          opacity: 1;
+          transform: rotate(($fab-close-spins*2+1)*135deg);
+        }
+      }
+    }
+  }
+}
