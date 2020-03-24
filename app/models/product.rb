@@ -8,4 +8,12 @@ class Product < ApplicationRecord
   validates :title, presence: true
   validates :status, presence: true
   validates :category, presence: true
+
+  enum status: {
+    to_sell: 1,
+    to_give: 2,
+    sold: 3,
+    given: 4,
+    keep: 5
+  }
 end

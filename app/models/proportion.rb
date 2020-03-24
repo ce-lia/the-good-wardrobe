@@ -18,5 +18,4 @@ class Proportion < ApplicationRecord
   def owner
     self.product.user
   end
-
 end
