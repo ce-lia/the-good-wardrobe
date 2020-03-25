@@ -5,8 +5,8 @@ body {
 
 .container-home{
   position: relative;
-  background-image: asset-url('Ethical_wardrobe1.jpg');
-  height: 100vh;
+  background-image: asset-url('bg-home.jpg');
+  height: 770px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -38,88 +38,33 @@ body {
   background-color:rgba(0, 0, 0, 0.4);
 }
 
+#user_email, #user_password{
+  padding: 2px 10px 2px 10px;
+  background-color: rgba(255, 255, 255, 0.6)!important;
+  border-radius: 5px;
+}
 
-// .page{
-//   height: 93vh;
-//   padding: 170px;
-// }
+#new_user {
+  width: 50%;
+  margin: auto;
+}
 
-// .background {
-//   background-color: white;
-//   width: 70%;
-//   display: center;
-//   margin-left: 230px;
-// }
-// .form-actions {
-//   width: 6px;
-//   margin-left: 110px;
-//   width: 20px;
-// }
+.login {
+  border-radius: 35px!important;
+}
 
-// .input-group{
-//   width: 100%;
-// }
-// .button {
-//   background-color: #007bff;
-//   border-color: none;
-//   border-radius:  27px;
-//   width: 170px;
-//   align: center;
-//   &:hover {
-//     background-color: #28a745;
-//   }
-// }
+.bloc-p {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+  text-align: justify;
+}
 
-// .button a {
-//   color: white;
-// }
+.bloc-p-right{
+  float: right;
+}
 
-// .btn-custom{
-// background-color: #007bff;
-//   &:hover {
-//     background-color: #28a745;
-//   }
-// }
-// .welcome {
-//   font-size: 50px;
-//   color: white;
-//   text-align: left;
-// }
+.-container .title {
+  text-align: center
+}
 
-// .find{
-//   font-size: 35px;
-//   font-weight: lighter;
-// }
-
-// .banner-content{
-//     position:absolute;
-//     width: 600px;
-//     left: 20%;
-//     top: 45%;
-//     height: 120px;
-//     margin-top: -59px;
-//     margin-left: -163px;
-//     .input-group{
-//       width: 600px;
-//     }
-// }
-
-// .elements {
-//   margin-right: 580px;
-// }
-
-// .header-home{
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   grid-gap: 2em;
-//   width: 100%;
-//   z-index: 1;
-// }
-
-
-// .all-offers{
-//   color: white;
-//   &:hover{
-//     color: lightgray;
-//   }
-// }

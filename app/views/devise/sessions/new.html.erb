@@ -10,17 +10,21 @@
                     required: false,
                     placeholder: "Password" %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
 
-    <%= f.button :submit, "Log in" %>
-    <% end %>
+    <%= f.button :submit, "Log in", class: "login" %>
+    </div>
+    <div>
       <%= render "devise/shared/links" %>
+    </div>
+    <% end %>
+
     <div id="welcome">
-      <div class="container">
+      <div class="container -container">
        <div class="title">
-        <h2>Welcome to The Good Wardrobe</h2>
+        <h4>Welcome to The Good Wardrobe</h4>
        </div>
-        <p>Fashion is known for its negative social and environemental impact. Carbon emissions, high usage of pesticides and chemicals, bad conditions for factory workers... The most efficient way to reduce your impact is to rethink the way you buy, wear, and get rid of your clothes. The Good Wardrobe helps you track your purchases and display statistics to help you make better choices & take better care of the clothes you already own. You can not manage what don't measure, so log-in and start measuring your wardrobe !</p>
+        <p class="bloc-p">Fashion is known for its negative social and environemental impact. Carbon emissions, high usage of pesticides and chemicals, bad conditions for factory workers... The most efficient way to reduce your impact is to rethink the way you buy, wear, and get rid of your clothes.</p>
+        <p class="bloc-p bloc-p-right">The Good Wardrobe helps you track your purchases and display statistics to help you make better choices & take better care of the clothes you already own. You can not manage what don't measure, so log-in and start measuring your wardrobe !</p>
       </div>
     </div>
   </div>
