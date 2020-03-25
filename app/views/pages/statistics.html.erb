@@ -27,6 +27,8 @@
       <%= pie_chart @composition_hash, height: "200px" %>
     </div>
     <div class="w-100"></div>
+    <h4>What did you do with your old clothes ?</h3>
+    <%= pie_chart @status_hash, height: "200px" %>
   </div>
       <h4>Average time spent in your wardrobe</h3>
       <%= bar_chart @products.group(:category).sum(@lifetime),xtitle: "Months",label: "Months" %>

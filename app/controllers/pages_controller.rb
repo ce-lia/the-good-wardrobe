@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def statistics
-    @products = current_user.products.all
+    @products = current_user.products
     @lifetime = current_user.products_lifetime
 
     @composition_hash = Hash.new
@@ -15,5 +15,18 @@ class PagesController < ApplicationController
     thrifted = @products.group(:second_hand).count
     labels = { true => 'Thrifted', false => 'New' }
     @thrift_hash = thrifted.transform_keys(&labels.method(:[]))
+
+
+    statuses = ["donated","sold","thrown_away","recycled"]
+    @status_hash = Hash.new
+    @products.each do |product|
+      if statuses.include?(product.status)
+        if @status_hash[product.status]
+        @status_hash[product.status] += 1
+        else
+        @status_hash[product.status] = 1
+        end
+      end
+    end
   end
 end
