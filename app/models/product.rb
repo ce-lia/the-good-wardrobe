@@ -10,10 +10,17 @@ class Product < ApplicationRecord
   validates :category, presence: true
 
   enum status: {
-    to_sell: 1,
-    to_give: 2,
-    sold: 3,
-    given: 4,
-    keep: 5
+    in_my_wardrobe: 1,
+    to_sell: 2,
+    to_donate: 3,
+    to_recycle: 4,
+    to_throw_away: 5,
+    sold: 6,
+    donated: 7,
+    recycled: 8,
+    thrown_away: 9
   }
 end
+
+
+
