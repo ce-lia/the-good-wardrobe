@@ -3,7 +3,7 @@
   background: #fff;
   position: sticky;
   top: 0px;
-  z-index: 3;
+  z-index: 99999;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 .navbar-lewagon .navbar-collapse {
@@ -26,7 +26,7 @@
 
 .navbar-light .navbar-brand {
   color: $aubergine;
-  font-family: "Lora", "Helvetica", "sans-serif";
+  font-family: 'Abril Fatface', "Helvetica", "sans-serif";
   font-size: 30px;
    &:hover{
     color: #2D979E;

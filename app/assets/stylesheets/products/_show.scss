@@ -22,6 +22,14 @@
   width: 45%;
   vertical-align: top;
 }
+
+.btn-floating.btn-large {
+  top: 5px;
+}
+
+.text-show {
+  margin-top:-14px;
+}
 .img-show img {
   vertical-align: initial;
 }
@@ -32,7 +40,7 @@
   }
 }
 .delete-show {
-  background-color: $pink!important;
+  background-color: $orange-me!important;
   &:hover{
     color: #fff;
   }
@@ -135,7 +143,7 @@ $fab-close-spins: 1;
 }
 
 .missing {
-  color: #e26a6a
+  color: $red-me
 }
 
 .container-left {
@@ -143,8 +151,7 @@ $fab-close-spins: 1;
 }
 
 .main-title-product{
-  font-weight: bold;
-  font-size: 24px;
+  font-size: 35px;
   display: block;
 }
 

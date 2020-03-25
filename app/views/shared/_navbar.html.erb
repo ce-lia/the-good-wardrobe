@@ -14,16 +14,18 @@
          <li class="nav-item active">
           <%= link_to "MY STATS", statistics_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= link_to "MY PROFIL", "#", class: "nav-link", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <li class="nav-item">
+          <!--<%= link_to "MY PROFILE", edit_user_registration_path, class: "nav-link", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>-->
+          <%= link_to "MY PROFILE", edit_user_registration_path, class: "nav-link" %>
+          <!--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+          </div>-->
         </li>
+        <li class="nav-item active"><%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "LOG IN", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

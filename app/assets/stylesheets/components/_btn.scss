@@ -14,3 +14,26 @@ a:hover {
   text-decoration: none;
 
 }
+
+a {
+  color: $blue-sea!important;
+  &:hover{
+    color:$aubergine!important;
+  }
+}
+
+.footer-links a {
+  color: #fff!important;
+  &:hover{
+    color:#fff!important;
+  }
+}
+
+.navbar a {
+  color: $aubergine!important;
+  &:hover{
+    color:$blue-sea!important;
+  }
+}
+
+
