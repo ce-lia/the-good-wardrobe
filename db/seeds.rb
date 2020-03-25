@@ -23,7 +23,7 @@ puts "Creating our users..."
 
   users = [matti, celia, david, patrick, louis]
 
-  category = ["pants","shirt","dress","shorts","t-shirt","sweat-shirt","coat","jacket","skirt"]
+  category = ["Pants","Shirt","Dress","Shorts","T-shirt","Sweat-shirt","Coat","Jacket","Skirt"]
   countries = ["China", "Bangladesh", "Italy", "Turkey", "India", "Tunisia", "Vietnam", "Portugal"]
 
 puts "Creating our materials..."

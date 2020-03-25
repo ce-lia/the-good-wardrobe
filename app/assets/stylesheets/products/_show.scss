@@ -26,24 +26,13 @@
   vertical-align: initial;
 }
 .img-show .tag {
-  position: absolute;
-  right: 100px;
-  top: 10px;
-  border-radius: 25px;
-  background-color: $aubergine;
-  padding: 5px 25px 5px 25px;
+  background-color: $aubergine!important;
   &:hover{
     color: #fff;
   }
 }
 .delete-show {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  border-radius: 25px;
-  color: #fff;
-  background-color: $pink;
-  padding: 5px 25px 5px 25px;
+  background-color: $pink!important;
   &:hover{
     color: #fff;
   }
@@ -52,10 +41,8 @@
   color: #fff;
 }
 .back {
-  border-radius: 25px;
   color: #fff;
-  background-color: $mustard;
-  padding: 5px 25px 5px 25px;
+  background-color: $mustard!important;
   &:hover{
     color: #fff;
   }
@@ -128,4 +115,24 @@ $fab-close-spins: 1;
       }
     }
   }
+}
+
+
+.title-details {
+  text-decoration: underline;
+  display: block
+}
+
+.fixed-action-btn {
+  position: absolute!important;
+  right:130px!important;
+  top:0px!important;
+}
+
+.bg-blue-sea {
+  background-color: #2d979e;
+}
+
+.missing {
+  color: #e26a6a
 }

@@ -13,10 +13,16 @@ import $ from "jquery";
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems, {
-      direction: 'left'
+      direction: 'right'
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+     var elems = document.querySelectorAll('.materialboxed');
+     var instances = M.Materialbox.init(elems, {
+      outDuration: '200'
+     });
+   });
 
 // /* Code pour le stretch de la navbar 2 */
 
