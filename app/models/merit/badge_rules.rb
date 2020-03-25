@@ -44,6 +44,18 @@ module Merit
       grant_on ['proportions#create','proportions#destroy'],  badge: 'eco103', temporary: true, to: :owner do |proportion|
         proportion.product.user.organic_recycled_materials >= 0.5
       end
+
+      grant_on ['products#update'],  badge: 'recycler101', temporary: true, to: :user do |product|
+        product.user.recycler < 1
+      end
+
+      grant_on ['products#update'],  badge: 'recycler102', temporary: true, to: :user do |product|
+        product.user.recycler >= 1 && product.user.recycler < 4
+      end
+
+      grant_on ['products#update'],  badge: 'recycler103', temporary: true, to: :user do |product|
+        product.user.recycler >= 4
+      end
     end
   end
 end

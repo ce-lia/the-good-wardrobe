@@ -43,6 +43,28 @@ Merit.setup do |config|
   description: "Over 50% of organic or recycled materials",
   custom_fields: { image: 'badge103.png', advice: "You're amazing!"}
 )
+
+  Merit::Badge.create!(
+  id: 7,
+  name: "recycler101",
+  description: "More than 50% of the time you threw away your old clothes",
+  custom_fields: { image: 'badge101.png', advice: 'Try giving a new life to your old clothes'}
+)
+
+  Merit::Badge.create!(
+  id: 8,
+  name: "recycler102",
+  description: "More than 50% of the time you gave new life to your old clothes",
+  custom_fields: { image: 'badge102.png', advice: 'Good job ! Keep up the good work'}
+)
+
+  Merit::Badge.create!(
+  id: 9,
+  name: "recycler103",
+  description: "More than 80% of the time you gave a new life to your old clothes",
+  custom_fields: { image: 'badge103.png', advice: "You're amazing!"}
+)
+
   # Check rules on each request or in background
   # config.checks_on_each_request = true
 

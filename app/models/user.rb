@@ -46,4 +46,18 @@ class User < ApplicationRecord
     good_composition.to_f / total_composition.to_f
   end
 
+  def recycler
+    good_status = ["donated","sold","recycled"]
+    recycled = []
+    thrown = []
+    self.products.each do |product|
+      if good_status.include?(product.status)
+        recycled << product
+      elsif product.status == "thrown_away"
+        thrown << product
+      end
+    end
+    recycled.count.to_f / thrown.count.to_f
+  end
+
 end
