@@ -6,33 +6,111 @@
   <div class="img-show">
     <%if @product.photo.attached? %>
     <!-- <span class="tag">status</span> -->
-    <span class="tag"><%= link_to "Edit ", edit_product_path(@product) %></span>
-    <%= cl_image_tag @product.photo.key %>
+    <!--<span class="tag"><%= link_to "Edit ", edit_product_path(@product) %></span>-->
+     <div class="fixed-action-btn horizontal click-to-toggle spin-close">
+        <a class="btn-floating btn-large bg-blue-sea">
+          <i class="material-icons">edit</i>
+        </a>
+        <ul>
+          <li>
+            <%= link_to product_path(@product),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn-floating delete-show" do%>
+                  <i class="material-icons">delete</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to edit_product_path(@product), class: "btn-floating tag darken-1" do %>
+              <i class="material-icons">mode_edit</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path, class: "btn-floating back" do %>
+              <i class="material-icons">home</i>,
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+    <%= cl_image_tag @product.photo.key, class: "materialboxed" %>
     <%else%>
-    <span class="tag"><%= link_to "Edit ", edit_product_path(@product) %></span>
-    <%= cl_image_tag("summer-clothes-set_74855-446_ehwivf.jpg") %>
+    <div class="fixed-action-btn horizontal click-to-toggle spin-close">
+        <a class="btn-floating btn-large bg-blue-sea">
+          <i class="material-icons">edit</i>
+        </a>
+        <ul>
+          <li>
+            <%= link_to product_path(@product),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn-floating delete-show" do%>
+                  <i class="material-icons">delete</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to edit_product_path(@product), class: "btn-floating tag darken-1" do %>
+              <i class="material-icons">mode_edit</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path, class: "btn-floating back" do %>
+              <i class="material-icons">home</i>,
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+    <%= cl_image_tag("summer-clothes-set_74855-446_ehwivf.jpg", class: "materialboxed") %>
     <%end%>
   </div>
 </div>
   <div class="text-show">
-    <!--     <h3>Description</h3>
-    <p><%= @product.description%></p> -->
-    <h3>Brand</h3>
-      <p><%= @product.brand%></p>
-    <h3>Product status</h3>
+    <!-- description-->
+    <p><%= @product.description%></p>
+
+    <!--second hand-->
     <% if @product.second_hand == true %>
+        <span class="title-details">I bought it</span>
         <p>Second hand</p>
       <% else %>
+        <span class="title-details">I bought it</span>
         <p>New</p>
     <%end %>
-    <h3>Category</h3>
-      <p><%= @product.category%></p>
-    <h3>Made in</h3>
-      <p><%= @product.origin%></p>
-    <span><%= link_to "Delete" , product_path(@product),
-      method: :delete,
-      data: { confirm: "Are you sure?" }, class: "delete-show" %>
-    </span>
+
+    <!--category-->
+    <% unless @product.category == nil %>
+      <span class="title-details">Category</span>
+      <p> <%= @product.category%></p>
+    <% else %>
+      <p class="missing"> *You should add one category in page edit </p>
+    <% end  %>
+
+    <!--brand-->
+    <% unless @product.brand == nil %>
+      <span class="title-details">Brand</span>
+      <p><%= @product.brand%></p>
+    <% else %>
+      <p class="missing"> *You should add the brand in page edit </p>
+    <%end %>
+
+    <!--made in-->
+    <% unless @product.origin == "" %>
+      <span class="title-details">Origin</span>
+      <p><%= @product.origin %></p>
+    <% else %>
+      <p class="missing"> *You should add the origin in page edit </p>
+    <% end %>
+
+
+    <!--composition-->
+    <div>
+      <ul id="proportions">
+        <% @product.proportions.each do |proportion| %>
+        <%= render "proportions/show", proportion: proportion  %>
+        <% end %>
+      </ul>
+    </div>
+
+
       <!-- Click-only FAB html from http://materializecss.com/buttons.html  -->
 
 <!-- <div class="fixed-action-btn">
@@ -49,31 +127,11 @@
 -->
 
 
-
-<div class="fixed-action-btn horizontal click-to-toggle spin-close">
-    <a class="btn-floating btn-large red">
-      <i class="material-icons">edit</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-  </div>
-
-    <p><%= link_to 'My Wardrobe', root_path, class: "back" %></p>
       </div>
     </div>
     <div>
   </div>
-<div>
-    <ul id="proportions">
-      <% @product.proportions.each do |proportion| %>
-      <%= render "proportions/show", proportion: proportion  %>
-      <% end %>
-    </ul>
-  </div>
+
   <div class="add-proportion">
     <h3>Add materials</h3>
     <%= render "proportions/form", proportion: @proportion, product: @product  %>
