@@ -1,7 +1,5 @@
-
 <div data-proportion-id=<%= proportion.id %>>
-  <span class="title-details">Composition</span>
-  <li><%=  proportion.material.name %> - <%=  proportion.percentage %> %</li>
+  <li> <%=proportion.percentage%>% <%=proportion.material.name%></li>
   <%= link_to "delete",
         proportion_path(proportion),
         method: :delete,
