@@ -3,10 +3,15 @@
   height: 500px
 }
 
-.title-index {text-align: center; margin-top: 45px;}
+.title-index {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+
 .add-product {
   text-align:right;
-  width: 80%;
+  width: 82%;
   margin: auto;
 }
 
@@ -28,6 +33,10 @@
 .title-product {
   display: inline-block;
   font-size: 20px;
+  color: $aubergine!important;
+  &:hover {
+    color: $blue-sea!important;
+  }
 }
 .second-hand {
   display: inline-block;
@@ -89,4 +98,54 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 0)!important;
+  border: none!important;
+}
+
+#status {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+}
+
+#change_status {
+  font-size: 12px;
+  padding: 8px;
+  height: 25px;
+  line-height: 8px;
+  text-transform: capitalize;
+  width: 110px;
+  border-radius: 35px;
+  background-color: #488AB8;
+  box-shadow: 0 0 2px black;
+}
+
+.dropdown-menu form {
+  margin-left: 20px;
+}
+
+.dropdown-menu form:nth-child(2) #change_status, .dropdown-menu form:nth-child(3) #change_status, .dropdown-menu form:nth-child(4) #change_status, .dropdown-menu form:nth-child(5) #change_status{
+  background-color: $blue-sea;
+}
+
+.dropdown-menu form:nth-child(6) #change_status, .dropdown-menu form:nth-child(7) #change_status, .dropdown-menu form:nth-child(8) #change_status, .dropdown-menu form:nth-child(9) #change_status{
+  background-color: #3EB893;
+}
+
+#dropdownMenuButton {
+  border-radius: 35px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.new-prod {
+  border-radius:35px!important;
+}
+
+.card-trip-infos h3 {
+  margin: 0!important;
 }
