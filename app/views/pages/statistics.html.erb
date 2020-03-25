@@ -8,9 +8,11 @@
       <ul>
         <% current_user.badges.each do |badge| %>
           <li>
-            <%= image_tag(badge.custom_fields[:image])%><br>
-            <%= badge.description%><br>
-            <%= badge.custom_fields[:advice] %>
+            <%= image_tag(badge.custom_fields[:image])%>
+            <div class="mt-3 description-badge">
+              <%= badge.description%> <br>
+              <%= badge.custom_fields[:advice] %>
+            </div>
           </li>
         <% end %>
       </ul>
@@ -19,19 +21,20 @@
   <%end %>
   <div class="row">
     <div class="col-md-6 col-sm-12">
-      <h4>Thrifted clothes ratio</h3>
-      <%= pie_chart (@thrift_hash),donut: true, height: "200px" %>
+      <h4>Thrifted clothes ratio</h4>
+      <%= pie_chart (@thrift_hash), height: "200px" %>
     </div>
     <div class="col-md-6 col-sm-12">
-      <h4>Composition of your new clothes</h3>
+      <h4>Composition of your new clothes</h4>
       <%= pie_chart @composition_hash, height: "200px" %>
     </div>
-    <div class="w-100"></div>
-    <h4>What did you do with your old clothes ?</h3>
+    <div class="col-md-12 col-sm-12">
+      <h4>What did you do with your old clothes ?</h4>
+    </div>
     <%= pie_chart @status_hash, height: "200px" %>
   </div>
-      <h4>Average time spent in your wardrobe</h3>
+      <h4>Average time spent in your wardrobe</h4>
       <%= bar_chart @products.group(:category).sum(@lifetime),xtitle: "Months",label: "Months" %>
-       <h4>Where were your clothes made ?</h3>
+       <h4>Where were your clothes made ?</h4>
       <%= geo_chart @products.group(:origin).count %>
 </div>
