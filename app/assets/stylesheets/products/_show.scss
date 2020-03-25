@@ -5,12 +5,12 @@
   margin: auto;
   min-height: calc(100vh - 166px);
   margin-bottom: 50px;
-  margin-top: 50px;
 }
 .big-container-show{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 80px;
 }
 .container-show h1 {
   text-align: center;
@@ -48,7 +48,7 @@
   }
 }
 .img-show img {
-  height: 400px;
+  height: 600px;
   object-fit: cover;
   display: block;
   margin: auto;
@@ -119,8 +119,9 @@ $fab-close-spins: 1;
 
 
 .title-details {
-  text-decoration: underline;
-  display: block
+  display: inline-block;
+  font-weight: bold;
+  color: #4c5050;
 }
 
 .fixed-action-btn {
@@ -136,3 +137,25 @@ $fab-close-spins: 1;
 .missing {
   color: #e26a6a
 }
+
+.container-left {
+  margin-right: 50px;
+}
+
+.main-title-product{
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+}
+
+
+#proportions {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.details-pdt {
+  margin-top: 5px;
+}
+
+

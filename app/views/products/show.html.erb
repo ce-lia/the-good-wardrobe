@@ -1,6 +1,5 @@
 <div class="container-show">
   <!--   <h1>Produit : <%= @product.title %></h1> -->
- <h1><%= @product.title %></h1>
 <div class="big-container-show">
  <div class="container-left">
   <div class="img-show">
@@ -59,46 +58,57 @@
         </ul>
       </div>
 
-    <%= cl_image_tag("summer-clothes-set_74855-446_ehwivf.jpg", class: "materialboxed") %>
+    <%= cl_image_tag("default-image_m00t8o.jpg", class: "materialboxed") %>
     <%end%>
   </div>
 </div>
   <div class="text-show">
+    <!-- title -->
+    <span class="main-title-product"><%= @product.title %></span>
+
     <!-- description-->
     <p><%= @product.description%></p>
 
     <!--second hand-->
-    <% if @product.second_hand == true %>
-        <span class="title-details">I bought it</span>
-        <p>Second hand</p>
-      <% else %>
-        <span class="title-details">I bought it</span>
-        <p>New</p>
-    <%end %>
+    <div>
+      <% if @product.second_hand == true %>
+          <span class="title-details">I bought it</span>
+          <span>Second hand</span>
+        <% else %>
+          <span class="title-details">I bought it</span>
+          <span>New</span>
+      <%end %>
+    </div>
 
     <!--category-->
-    <% unless @product.category == nil %>
-      <span class="title-details">Category</span>
-      <p> <%= @product.category%></p>
-    <% else %>
-      <p class="missing"> *You should add one category in page edit </p>
-    <% end  %>
+    <div class="details-pdt">
+      <% unless @product.category == nil %>
+        <span class="title-details">Category</span>
+        <span> <%= @product.category%></span>
+      <% else %>
+        <span class="missing"> *You should add one category in page edit </span>
+      <% end  %>
+    </div>
 
     <!--brand-->
-    <% unless @product.brand == nil %>
-      <span class="title-details">Brand</span>
-      <p><%= @product.brand%></p>
-    <% else %>
-      <p class="missing"> *You should add the brand in page edit </p>
-    <%end %>
+    <div class="details-pdt">
+      <% unless @product.brand == nil %>
+        <span class="title-details">Brand</span>
+        <span><%= @product.brand%></span>
+      <% else %>
+        <span class="missing"> *You should add the brand in page edit </span>
+      <%end %>
+    </div>
 
     <!--made in-->
-    <% unless @product.origin == "" %>
-      <span class="title-details">Origin</span>
-      <p><%= @product.origin %></p>
-    <% else %>
-      <p class="missing"> *You should add the origin in page edit </p>
-    <% end %>
+    <div class="details-pdt">
+      <% unless @product.origin == "" %>
+        <span class="title-details">Made in</span>
+        <span><%= @product.origin %></span>
+      <% else %>
+        <span class="missing"> *You should add the origin in page edit </>
+      <% end %>
+    </div>
 
 
     <!--composition-->
@@ -110,6 +120,10 @@
       </ul>
     </div>
 
+    <div class="add-proportion">
+      <span class="title-details">Composition</span>
+      <%= render "proportions/form", proportion: @proportion, product: @product  %>
+    </div>
 
       <!-- Click-only FAB html from http://materializecss.com/buttons.html  -->
 
@@ -132,10 +146,7 @@
     <div>
   </div>
 
-  <div class="add-proportion">
-    <h3>Add materials</h3>
-    <%= render "proportions/form", proportion: @proportion, product: @product  %>
-  </div>
+
 </div>
 </div>
 
