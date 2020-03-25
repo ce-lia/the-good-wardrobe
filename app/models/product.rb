@@ -8,4 +8,19 @@ class Product < ApplicationRecord
   validates :title, presence: true
   validates :status, presence: true
   validates :category, presence: true
+
+  enum status: {
+    in_my_wardrobe: 1,
+    to_sell: 2,
+    to_donate: 3,
+    to_recycle: 4,
+    to_throw_away: 5,
+    sold: 6,
+    donated: 7,
+    recycled: 8,
+    thrown_away: 9
+  }
 end
+
+
+

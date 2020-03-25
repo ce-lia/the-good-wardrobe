@@ -49,6 +49,7 @@
 -->
 
 
+
 <div class="fixed-action-btn horizontal click-to-toggle spin-close">
     <a class="btn-floating btn-large red">
       <i class="material-icons">edit</i>
@@ -60,13 +61,13 @@
       <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
     </ul>
   </div>
+
     <p><%= link_to 'My Wardrobe', root_path, class: "back" %></p>
       </div>
     </div>
     <div>
   </div>
 <div>
-    <h3>Composition</h3>
     <ul id="proportions">
       <% @product.proportions.each do |proportion| %>
       <%= render "proportions/show", proportion: proportion  %>

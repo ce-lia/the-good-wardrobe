@@ -8,15 +8,16 @@
     <div class="card-trip">
       <%if product.photo.attached? %>
         <div class="img-card">
-          <span class="tag">status</span>
-
+          <!-- <span class="tag">status</span> -->
+          <%= render "products/status", product: product  %>
           <%= link_to product_path(product) do %>
             <%=cl_image_tag product.photo.key%>
           <% end %>
         </div>
         <%else%>
         <div class="img-card">
-          <span class="tag">status</span>
+          <!-- <span class="tag">status</span> -->
+          <%= render "products/status", product: product  %>
           <%= link_to product_path(product) do %>
             <%= cl_image_tag("summer-clothes-set_74855-446_ehwivf.jpg") %>
           <% end %>
@@ -27,7 +28,6 @@
           <%= link_to product_path(product) do %>
             <h3 class="title-product"><%=product.title%></h3>
           <% end %>
-          <span class="second-hand">frippe</span>
           <%if product.description.length >= 0 %>
             <p><%=product.description.first(90)%>...</p>
           <%else%>
