@@ -1,4 +1,4 @@
 meta_product_name: "The Good Wardrobe"
 meta_title: "The Good Wardrobe - Create your Wardrobe"
 meta_description: "The Good Wardrobe helps you track your purchases and display statistics to help you make better choices & take better care of the clothes you already own."
-meta_image: "bg-home.jpg" # should exist in `app/assets/images/`
+meta_image: "bg-meta.jpg" # should exist in `app/assets/images/`
