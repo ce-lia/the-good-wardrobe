@@ -12,7 +12,7 @@ puts "Creating our users..."
 
   matti   = User.create!(email: 'matti@matti.com',password: 'password', first_name:"Matti",last_name:"Benoliel", address: "Marseille")
   sleep(1)
-  celia   = User.create!(email: 'celia@celia.com',password: 'password', first_name:"Celia",last_name:"Franceschi",address:"Carcassone")
+  celia   = User.create!(email: 'celia@celia.com',password: 'password', first_name:"Celia",last_name:"Franceschi",address:"Carcassonne")
   sleep(1)
   david   = User.create!(email: 'peuks@peuks.com',password: 'password', first_name:"David",last_name:"Vanmak",address:"Aix en Provence")
   sleep(1)
@@ -44,7 +44,7 @@ rayon = Material.create!(name: 'rayon')
 
 puts "Creating our products..."
 
-1.times do |i|
+60.times do |i|
   user = users.sample
   product = Product.new(
     title:Faker::Commerce.product_name,
