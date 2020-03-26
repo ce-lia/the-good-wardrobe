@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     @thrift_hash = thrifted.transform_keys(&labels.method(:[]))
 
 
-    statuses = ["donated","sold","thrown_away","recycled"]
+    statuses = ["donated","sold","thrown away","recycled"]
     @status_hash = Hash.new
     @products.each do |product|
       if statuses.include?(product.status)

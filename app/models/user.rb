@@ -53,7 +53,7 @@ class User < ApplicationRecord
     self.products.each do |product|
       if good_status.include?(product.status)
         recycled << product
-      elsif product.status == "thrown_away"
+      elsif product.status == "thrown away"
         thrown << product
       end
     end
